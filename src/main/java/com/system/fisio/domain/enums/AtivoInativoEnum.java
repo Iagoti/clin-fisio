@@ -1,5 +1,6 @@
 package com.system.fisio.domain.enums;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.system.fisio.domain.exception.CodigoInvalidoException;
 
@@ -25,6 +26,7 @@ public enum AtivoInativoEnum {
         return descricao;
     }
 
+    @JsonCreator
     public static AtivoInativoEnum fromCodigo(Integer codigo) {
         if (codigo == null) {
             return null;

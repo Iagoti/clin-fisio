@@ -18,8 +18,8 @@ class UsuarioTest {
                 "joao@email.com",
                 "joao",
                 "123456",
-                AtivoInativoEnum.ATIVO,
-                TipoUsuario.ADM
+                TipoUsuario.ADM,
+                AtivoInativoEnum.ATIVO
         );
     }
 
@@ -27,10 +27,10 @@ class UsuarioTest {
     @DisplayName("Deve criar usuário válido com sucesso")
     void deveCriarUsuarioValido() {
         Usuario usuario = criarUsuarioValido();
-        assertEquals("João Silva", usuario.getNome());
+        assertEquals("João Silva", usuario.getNmUsuario());
         assertEquals("joao", usuario.getLogin());
         assertEquals(AtivoInativoEnum.ATIVO, usuario.getStUsuario());
-        assertEquals(TipoUsuario.ADM, usuario.getTipo());
+        assertEquals(TipoUsuario.ADM, usuario.getTpUsuario());
         assertNotNull(usuario.getDataCadastro());
     }
 
@@ -70,8 +70,8 @@ class UsuarioTest {
                         "email@email.com",
                         "login",
                         "123",
-                        AtivoInativoEnum.ATIVO,
-                        TipoUsuario.ADM
+                        TipoUsuario.ADM,
+                        AtivoInativoEnum.ATIVO
                 )
         );
     }
@@ -87,8 +87,8 @@ class UsuarioTest {
                         "email@email.com",
                         "",
                         "123",
-                        AtivoInativoEnum.ATIVO,
-                        TipoUsuario.ADM
+                        TipoUsuario.ADM,
+                        AtivoInativoEnum.ATIVO
                 )
         );
     }
@@ -104,8 +104,8 @@ class UsuarioTest {
                         "email@email.com",
                         "login",
                         null,
-                        AtivoInativoEnum.ATIVO,
-                        TipoUsuario.ADM
+                        TipoUsuario.ADM,
+                        AtivoInativoEnum.ATIVO
                 )
         );
     }
@@ -121,8 +121,8 @@ class UsuarioTest {
                         "email@email.com",
                         "login",
                         "123",
-                        AtivoInativoEnum.ATIVO,
-                        null
+                        null,
+                        AtivoInativoEnum.ATIVO
                 )
         );
     }

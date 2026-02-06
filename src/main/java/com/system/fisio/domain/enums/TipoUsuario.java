@@ -1,7 +1,7 @@
 package com.system.fisio.domain.enums;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.annotation.JsonValue;
 import com.system.fisio.domain.exception.CodigoInvalidoException;
 
 @JsonFormat(shape = JsonFormat.Shape.OBJECT)
@@ -26,6 +26,7 @@ public enum TipoUsuario {
         return descricao;
     }
 
+    @JsonCreator
     public static TipoUsuario fromCodigo(Integer codigo) {
         if (codigo == null) {
             return null;
