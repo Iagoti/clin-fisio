@@ -8,39 +8,46 @@ import java.time.LocalDateTime;
 public class Usuario {
 
     private Integer cdUsuario;
-    private String nome;
+    private String nmUsuario;
     private String email;
     private String login;
     private String senha;
+    private TipoUsuario tpUsuario;
     private AtivoInativoEnum stUsuario;
-    private TipoUsuario tipo;
     private final LocalDateTime dataCadastro;
 
     public Usuario(
             Integer cdUsuario,
-            String nome,
+            String nmUsuario,
             String email,
             String login,
             String senha,
-            AtivoInativoEnum stUsuario,
-            TipoUsuario tipo
+            TipoUsuario tpUsuario,
+            AtivoInativoEnum stUsuario
+            
     ) {
         this.cdUsuario = cdUsuario;
-        this.nome = nome;
+        this.nmUsuario = nmUsuario;
         this.email = email;
         this.login = login;
         this.senha = senha;
-        this.stUsuario = stUsuario;
-        this.tipo = tipo;
+        this.tpUsuario = tpUsuario;
+        this.stUsuario = AtivoInativoEnum.ATIVO;
         this.dataCadastro = LocalDateTime.now();
         validar();
     }
 
+    public void validarUsuarioAtivo() {
+        if(!this.stUsuario.equals(AtivoInativoEnum.ATIVO)) {
+            throw new UsuarioException("Usuário inativo.");
+        }
+    }
+
     private void validar() {
-        if (nome == null || nome.isBlank()) throw new UsuarioException("Nome obrigatório");
+        if (nmUsuario == null || nmUsuario.isBlank()) throw new UsuarioException("Nome obrigatório");
         if (login == null || login.isBlank()) throw new UsuarioException("Login obrigatório");
         if (senha == null || senha.isBlank()) throw new UsuarioException("Senha obrigatória");
-        if (tipo == null) throw new UsuarioException("Tipo de usuário obrigatório");
+        if (tpUsuario == null) throw new UsuarioException("Tipo de usuário obrigatório");
     }
 
     public void inativar() {
@@ -55,8 +62,8 @@ public class Usuario {
         return cdUsuario;
     }
 
-    public String getNome() {
-        return nome;
+    public String getNmUsuario() {
+        return nmUsuario;
     }
 
     public String getEmail() {
@@ -75,8 +82,8 @@ public class Usuario {
         return stUsuario;
     }
 
-    public TipoUsuario getTipo() {
-        return tipo;
+    public TipoUsuario getTpUsuario() {
+        return tpUsuario;
     }
 
     public LocalDateTime getDataCadastro() {
