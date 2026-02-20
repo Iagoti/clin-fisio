@@ -1,5 +1,6 @@
 package com.system.fisio.infrastructure.persistence.repository;
 
+import java.util.List;
 import java.util.Optional;
 import org.springframework.stereotype.Repository;
 import com.system.fisio.domain.model.Usuario;
@@ -34,5 +35,10 @@ public class UsuarioRepositoryImpl implements IUsuarioRepository {
                 .map(mapper::toDomain);
     }
 
-
+    @Override
+    public List<Usuario> findAll() {
+        return jpaRepository.findAll().stream()
+                .map(mapper::toDomain)
+                .toList();
+    }
 }
