@@ -1,7 +1,6 @@
 package com.system.fisio.application.usecase;
 
 import com.system.fisio.application.dto.UsuarioResponse;
-import com.system.fisio.domain.model.Usuario;
 import com.system.fisio.domain.ports.IUsuarioRepository;
 import org.springframework.stereotype.Component;
 

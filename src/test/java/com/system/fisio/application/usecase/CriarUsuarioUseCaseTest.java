@@ -17,7 +17,11 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import java.util.Optional;
+import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
@@ -42,6 +46,14 @@ class CriarUsuarioUseCaseTest {
 
     @BeforeEach
     void setup() {
+        // Define um Authentication com autoridade ROLE_ADM para que o use case permita criar usuários nos testes
+        var auth = new UsernamePasswordAuthenticationToken(
+                "test",
+                null,
+                List.of(new SimpleGrantedAuthority("ROLE_ADM"))
+        );
+        SecurityContextHolder.getContext().setAuthentication(auth);
+
         request = new UsuarioRequest(
                 "João Silva",
                 "joao@email.com",
@@ -124,4 +136,3 @@ class CriarUsuarioUseCaseTest {
         verify(usuarioMapper).toDomain(any(UsuarioRequest.class));
     }
 }
-
