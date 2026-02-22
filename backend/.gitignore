@@ -1,0 +1,87 @@
+# Sistema operacional
+.DS_Store
+Thumbs.db
+
+# IDEs
+/.idea/
+/*.iml
+*.ipr
+*.iws
+.vscode/
+out/
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# Build
+/target/
+/build/
+/dist/
+/bin/
+/classes/
+/generated/
+
+# Maven
+dependency-reduced-pom.xml
+release.properties
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+
+# Java
+*.class
+*.jar
+*.war
+*.ear
+*.nar
+*.zip
+*.tar.gz
+hs_err_pid*
+*.log
+
+# Test / coverage
+coverage/
+jacoco.exec
+*.exec
+target/site/
+
+# Logs and temp
+*.log
+logs/
+tmp/
+temp/
+*.tmp
+*.swp
+*~
+
+# Environment/config
+.env
+.env.*
+*.local
+*.properties.local
+
+# Database
+*.db
+*.sqlite
+*.sql
+
+# Archives / packages
+*.7z
+*.rar
+
+# Node (se comum em multi-repo)
+node_modules/
+
+# CI/CD
+.vagrant/
+docker-compose.override.yml
+
+# Misc
+.idea/
+.idea_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.ruby-version
