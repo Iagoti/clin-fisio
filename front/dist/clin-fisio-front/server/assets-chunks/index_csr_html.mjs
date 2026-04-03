@@ -1,0 +1,18 @@
+export default `<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>ClinFisioFront</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="styles.css"></head>
+<body ngcm="">
+  <app-root></app-root>
+<link rel="modulepreload" href="chunk-PEEU7FWC.js"><link rel="modulepreload" href="chunk-I5CDD5XV.js"><link rel="modulepreload" href="chunk-JCYBFGKV.js"><link rel="modulepreload" href="chunk-BJSPNLP5.js"><link rel="modulepreload" href="chunk-UO3BMMVU.js"><link rel="modulepreload" href="chunk-X5VKXNEV.js"><link rel="modulepreload" href="chunk-4PXBQJLQ.js"><link rel="modulepreload" href="chunk-AXTQVTRC.js"><script src="main.js" type="module"></script></body>
+</html>
+`;

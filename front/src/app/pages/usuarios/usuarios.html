@@ -1,0 +1,39 @@
+<div class="usuarios-page">
+  <div class="mt-1 p-4 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">
+    <h1 class="page-title text-slate-800 dark:text-slate-100">
+      <mat-icon class="!text-emerald-600 dark:!text-emerald-400">people</mat-icon>
+      Usuários
+    </h1>
+    <p class="page-description text-slate-500 dark:text-slate-400">Gerencie os usuários do sistema.</p>
+  </div>
+
+  <!-- <div class="mt-8 p-4 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">
+    <form class="mt-8 space-y-4" [formGroup]="form">
+      <div formGroupName="credentials" class="space-y-4">
+        <app-input-nm-usuario [parentFormGroup]="credentialsGroup"></app-input-nm-usuario>
+      </div>
+
+    </form>
+  </div> -->
+
+  <div class="mt-8 p-4 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">
+    <div class="list-header">
+      <h2 class="text-slate-800 dark:text-slate-100 font-semibold mb-0">Lista de usuários</h2>
+      <a mat-raised-button color="primary" routerLink="/dashboard/usuarios/novo">
+        <mat-icon>add</mat-icon>
+        Novo usuário
+      </a>
+    </div>
+
+    <div class="filtro-row">
+      <app-filtro-nome-usuario [(value)]="filtroNome" label="Nome" placeholder="Digite o nome para buscar"></app-filtro-nome-usuario>
+      <app-filtro-usuario-ativo [(value)]="filtroAtivo" label="Somente ativos"></app-filtro-usuario-ativo>
+      <div class="filtro-actions">
+        <app-btn-pesquisar (pesquisar)="pesquisar()"></app-btn-pesquisar>
+        <app-btn-limpar (limpar)="limpar()"></app-btn-limpar>
+      </div>
+    </div>
+
+    <app-table-usuario [usuarios]="(usuarios | async) ?? []"></app-table-usuario>
+  </div>
+</div>

@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/shared/input-modules.ts"],
+  "sourcesContent": ["import { CommonModule } from '@angular/common';\nimport { ReactiveFormsModule } from '@angular/forms';\nimport { MatFormFieldModule } from '@angular/material/form-field';\nimport { MatInputModule } from '@angular/material/input';\nimport { MatIconModule } from '@angular/material/icon';\n\nexport const SHARED_INPUT_IMPORTS = [\n  CommonModule,\n  ReactiveFormsModule,\n  MatFormFieldModule,\n  MatInputModule,\n  MatIconModule,\n] as const;\n"],
+  "mappings": ";;;;;;;;;;;;AAMO,IAAM,uBAAuB;EAClC;EACA;EACA;EACA;EACA;;",
+  "names": []
+}
